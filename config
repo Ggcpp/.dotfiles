@@ -1,0 +1,24 @@
+-- While installing --
+networkmanager (light gui network manager)
+os-prober
+grub
+dhcpcd
+efibootmgr
+nvidia
+
+-- Post installation --
+alsamixer (audio)
+htop (gestionnaire des taches)
+neofetch (display infos)
+nvim (editor) -> cmake + git
+chromium (web browser)
+alacritty (terminal)
+i3 (window manager) -> xorg (X server)
+dmenu (launch program by typing)
+unzip
+sudo
+yay (package manager for AUR)
+feh (background wallpaper)
+polybar (AUR)
+picom (opacity)
+
