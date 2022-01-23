@@ -11,14 +11,14 @@ pacman -S xorg-server xorg-xinit
 pacman -S i3-wm i3status dmenu
 pacman -S alacritty
 pacman -S chromium
-pacman -S alsamixer
+pacman -S alsa-utils
 
 # Vanity stuff
 pacman -S neofetch
 pacman -S feh
 pacman -S picom
 
-# To make symlinks dinamically
+# Make symlinks dynamically
 pacman -S stow
 
 for folder in */
