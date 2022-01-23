@@ -13,6 +13,14 @@ pacman -S alacritty
 pacman -S chromium
 pacman -S alsa-utils
 
+# Install yay to download AUR packages
+pushd ~
+git clone "https://aur.archlinux.org/yay.git"
+cd yay
+makepkg -si
+rm -rf yay
+popd
+
 # Vanity stuff
 pacman -S neofetch
 pacman -S feh
