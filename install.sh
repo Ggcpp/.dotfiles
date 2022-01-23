@@ -11,6 +11,7 @@ pacman -S xorg-server xorg-xinit
 pacman -S i3-wm i3status dmenu
 pacman -S alacritty
 pacman -S chromium
+pacman -S sof-firmware
 pacman -S alsa-utils
 
 # Install yay to download AUR packages
