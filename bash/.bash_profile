@@ -1,6 +1,5 @@
 #
 # ~/.bash_profile
-#
+# executed one time on login bash shell
 
-[[ -f ~/.profile ]] && . ~/.profile
-exec startx
+[[ -f ~/.bashrc ]] && . ~/.bashrc

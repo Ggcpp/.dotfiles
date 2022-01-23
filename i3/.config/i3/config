@@ -182,17 +182,16 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+    status_command i3status
 }
 
-gaps inner 15
-gaps outer 12
-smart_gaps on
-smart_borders on
+# gaps inner 15
+# gaps outer 12
+# smart_gaps on
+# smart_borders on
 
 # prevent black borders to appear when there are gaps.
-for_window [class=".*"] border pixel 2
-# hide_edge_borders both
+for_window [class=".*"] border pixel 0
 
-# Picom maybe in .profile or .xprofile (don't remember)
+# Start picom (opacity manager)
 exec_always --no-startup-id picom &
