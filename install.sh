@@ -3,33 +3,56 @@
 # .dotfiles/install.sh
 
 # Establish an internet connection
-systemctl start NetworkManager
-systemctl enable NetworkManager
+ps -C NetworkManager >/dev/null || (systemctl start NetworkManager && systemctl enable NetworkManager)
 
-# Install basic needs for desktop environment
-pacman -S xorg-server xorg-xinit
-pacman -S i3-wm i3status dmenu
-pacman -S alacritty
-pacman -S chromium
-pacman -S sof-firmware
-pacman -S alsa-utils
+# Functions
+install_pacman_packages() {
+    pacman -S $(<pkglist/.pkglist/pacman)
+}
 
-# Install yay to download AUR packages
-pushd ~
-git clone "https://aur.archlinux.org/yay.git"
-cd yay
-makepkg -si
-rm -rf yay
-popd
+# To download AUR packages
+install_yay() {
+    pushd ~
 
-# Vanity stuff
-pacman -S neofetch
-pacman -S feh
-pacman -S picom
+    git clone "https://aur.archlinux.org/yay.git"
+    pushd yay
+    makepkg -si
+    popd
+    rm -rf yay
+
+    popd
+}
+
+install_aur_packages() {
+    yay -S $(<pkglist/.pkglist/aur)
+}
+
+# Get options
+while getopts Apayh flag
+do
+    case "${flag}" in
+        A)
+            install_pacman_packages
+            install_yay
+            install_aur_packages
+            break;;
+        p)
+            install_pacman_packages;;
+        a)
+            install_aur_packages;;
+        y)
+            install_yay;;
+        h)
+            echo "A: install yay + pacman and AUR packages."
+            echo "p: install pacman packages."
+            echo "a: install AUR packages."
+            echo "y: install yay."
+            echo "h: print help."
+            break;;
+    esac
+done
 
 # Make symlinks dynamically
-pacman -S stow
-
 for folder in */
 do
 	stow $folder
