@@ -63,6 +63,7 @@ return packer.startup(function(use)
 
     -- Colorscheme
     use "NLKNguyen/papercolor-theme"
+    use "gruvbox-community/gruvbox"
 
     -- Telescope
     use { 

@@ -185,13 +185,16 @@ bar {
     status_command i3status
 }
 
-# gaps inner 15
-# gaps outer 12
-# smart_gaps on
-# smart_borders on
+gaps inner 50
+gaps outer 0
+smart_gaps on
+smart_borders on
 
 # prevent black borders to appear when there are gaps.
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 5
 
 # Start picom (opacity manager)
 exec_always --no-startup-id picom &
+
+client.focused #928374 #928374 #928374 #928374 #928374
+client.unfocused #7c6f64 #7c6f64 #7c6f64 #7c6f64 #504945
