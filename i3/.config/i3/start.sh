@@ -24,9 +24,9 @@ done
 if [[ "$WS_EXIST" == false ]]
 then
     case $TARGET_WS in
-        9)
+        2)
             alacritty -e nvim;;
-        10)
+        3)
             chromium;;
     esac
 fi
