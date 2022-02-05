@@ -7,8 +7,8 @@ ps -C NetworkManager >/dev/null || (systemctl start NetworkManager && systemctl 
 
 # Functions
 install_pacman_packages() {
-    pacman -S $(<pkglist/.pkglist/pacman)
     pacman -Syu
+    pacman -S $(<pkglist/.pkglist/pacman)
 }
 
 # To download AUR packages
@@ -22,6 +22,9 @@ install_yay() {
     rm -rf yay
 
     popd
+
+    # Make everything up to date
+    yay
 }
 
 install_aur_packages() {
