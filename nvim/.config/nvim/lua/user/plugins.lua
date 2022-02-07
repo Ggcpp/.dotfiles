@@ -65,6 +65,13 @@ return packer.startup(function(use)
     use "NLKNguyen/papercolor-theme"
     use "gruvbox-community/gruvbox"
 
+    -- Markdown preview
+    use {
+        "iamcco/markdown-preview.nvim",
+        run = 'mkdp#util#install()',
+        ft = {'markdown'}
+    }
+
     -- Telescope
     use { 
         "nvim-telescope/telescope.nvim",
