@@ -5,5 +5,6 @@ require "user.notify"
 require "user.colorscheme"
 require "user.treesitter"
 require "user.cmp"
+require "user.snippets"
 require "user.lsp"
 

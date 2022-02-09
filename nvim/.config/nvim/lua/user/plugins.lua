@@ -69,7 +69,10 @@ return packer.startup(function(use)
     use {
         "iamcco/markdown-preview.nvim",
         run = 'mkdp#util#install()',
-        ft = {'markdown'}
+        ft = {'markdown'},
+        config = function()
+            dofile(vim.fn.stdpath("config") .. "/lua/user/markdown-preview.lua");
+        end
     }
 
     -- Telescope
@@ -85,7 +88,9 @@ return packer.startup(function(use)
     }
 
     -- Snippets
-    use "L3MON4D3/LuaSnip"
+    use {
+        "L3MON4D3/LuaSnip",
+    }
 
     -- Cmp and Snippets
     use "hrsh7th/nvim-cmp"          -- completion plugin

@@ -110,6 +110,7 @@ _G.packer_plugins = {
     url = "https://github.com/gruvbox-community/gruvbox"
   },
   ["markdown-preview.nvim"] = {
+    config = { "\27LJ\2\nk\0\0\5\0\6\0\n6\0\0\0006\2\1\0009\2\2\0029\2\3\2'\4\4\0B\2\2\2'\3\5\0&\2\3\2B\0\2\1K\0\1\0#/lua/user/markdown-preview.lua\vconfig\fstdpath\afn\bvim\vdofile\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
