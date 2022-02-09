@@ -104,13 +104,31 @@ _G.packer_plugins = {
     path = "/home/gregoire/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["goyo.vim"] = {
+    after = { "limelight.vim" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/gregoire/.local/share/nvim/site/pack/packer/opt/goyo.vim",
+    url = "https://github.com/junegunn/goyo.vim"
+  },
   gruvbox = {
     loaded = true,
     path = "/home/gregoire/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/gruvbox-community/gruvbox"
   },
+  ["limelight.vim"] = {
+    config = { "\27LJ\2\n•\1\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0v                autocmd! User GoyoEnter Limelight\n                autocmd! User GoyoLeave Limelight!\n            \bcmd\bvim\0" },
+    load_after = {
+      ["goyo.vim"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/gregoire/.local/share/nvim/site/pack/packer/opt/limelight.vim",
+    url = "https://github.com/junegunn/limelight.vim"
+  },
   ["markdown-preview.nvim"] = {
-    config = { "\27LJ\2\nk\0\0\5\0\6\0\n6\0\0\0006\2\1\0009\2\2\0029\2\3\2'\4\4\0B\2\2\2'\3\5\0&\2\3\2B\0\2\1K\0\1\0#/lua/user/markdown-preview.lua\vconfig\fstdpath\afn\bvim\vdofile\0" },
+    config = { "\27LJ\2\n¹\2\0\0\5\0\b\0\0146\0\0\0006\2\1\0009\2\2\0029\2\3\2'\4\4\0B\2\2\2'\3\5\0&\2\3\2B\0\2\0016\0\1\0009\0\6\0'\2\a\0B\0\2\1K\0\1\0½\1                let g:mkdp_markdown_css = '~/pdf/style.css'\n                let g:mkdp_highlight_css = '~/pdf/style.css'\n                call mkdp#util#open_preview_page()\n            \bcmd#/lua/user/markdown-preview.lua\vconfig\fstdpath\afn\bvim\vdofile\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -169,7 +187,7 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'goyo.vim', 'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end

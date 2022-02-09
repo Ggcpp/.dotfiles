@@ -72,6 +72,29 @@ return packer.startup(function(use)
         ft = {'markdown'},
         config = function()
             dofile(vim.fn.stdpath("config") .. "/lua/user/markdown-preview.lua");
+            vim.cmd [[
+                let g:mkdp_markdown_css = '~/pdf/style.css'
+                let g:mkdp_highlight_css = '~/pdf/style.css'
+                call mkdp#util#open_preview_page()
+            ]]
+        end
+    }
+
+    -- Goyo, distraction-free writing
+    use {
+        "junegunn/goyo.vim",
+        ft =  {"markdown"},
+    }
+
+    -- Limelight, highlight current paragraph
+    use {
+        "junegunn/limelight.vim",
+        after = "goyo.vim",
+        config = function()
+            vim.cmd [[
+                autocmd! User GoyoEnter Limelight
+                autocmd! User GoyoLeave Limelight!
+            ]]
         end
     }
 
