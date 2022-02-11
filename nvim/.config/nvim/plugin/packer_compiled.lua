@@ -106,6 +106,7 @@ _G.packer_plugins = {
   },
   ["goyo.vim"] = {
     after = { "limelight.vim" },
+    config = { "\27LJ\2\n®\1\0\0\5\0\t\0\0166\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\3\0006\2\0\0009\2\4\0029\2\5\2'\4\6\0B\2\2\2'\3\a\0&\2\3\2B\0\2\0029\0\b\0B\0\1\1K\0\1\0\tinit#/lua/user/markdown-preview.lua\vconfig\fstdpath\afn\vdofile&                Goyo\n            \bcmd\bvim\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -118,7 +119,7 @@ _G.packer_plugins = {
     url = "https://github.com/gruvbox-community/gruvbox"
   },
   ["limelight.vim"] = {
-    config = { "\27LJ\2\n•\1\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0v                autocmd! User GoyoEnter Limelight\n                autocmd! User GoyoLeave Limelight!\n            \bcmd\bvim\0" },
+    config = { "\27LJ\2\nt\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0U                Limelight\n                autocmd! User GoyoLeave q\n            \bcmd\bvim\0" },
     load_after = {
       ["goyo.vim"] = true
     },
@@ -128,7 +129,6 @@ _G.packer_plugins = {
     url = "https://github.com/junegunn/limelight.vim"
   },
   ["markdown-preview.nvim"] = {
-    config = { "\27LJ\2\n¹\2\0\0\5\0\b\0\0146\0\0\0006\2\1\0009\2\2\0029\2\3\2'\4\4\0B\2\2\2'\3\5\0&\2\3\2B\0\2\0016\0\1\0009\0\6\0'\2\a\0B\0\2\1K\0\1\0½\1                let g:mkdp_markdown_css = '~/pdf/style.css'\n                let g:mkdp_highlight_css = '~/pdf/style.css'\n                call mkdp#util#open_preview_page()\n            \bcmd#/lua/user/markdown-preview.lua\vconfig\fstdpath\afn\bvim\vdofile\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -195,5 +195,6 @@ if should_profile then save_profiles() end
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end
