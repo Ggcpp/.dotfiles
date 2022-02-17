@@ -37,6 +37,25 @@ local function getBufferContent()
 end
 
 local function init()
+    vim.notify(_VERSION)
+    local http = require("socket.http")
+    local ltn12 = require("ltn12")
+    local str = "testo my friendo"
+    local response = {}
+    local base_url = "http://127.0.0.1:8080"
+
+    local result, respcode, respheaders, respstatus = http.request {
+        method = "POST",
+        url = base_url,
+        headers = {
+            ["content-type"] = "text/plain",
+            ["content-length"] = string.len(str)
+        },
+        source = ltn12.source.string(str),
+        sink = ltn12.sink.table(response)
+    }
+
+    -- TODO: include <script> for implement ajax in <head>
     vim.notify(execTerminal("pandoc --no-highlight --metadata title='Auto Generated' <<<'" .. getBufferContent() .. "' -c style.css -s"))
 
     -- run "update()" on every cursor movement in insert mode.

@@ -84,6 +84,7 @@ return packer.startup(function(use)
     use {
         "junegunn/goyo.vim",
         ft =  {"markdown"},
+        rocks = {"luasocket"},
         config = function()
             vim.cmd [[
                 Goyo
