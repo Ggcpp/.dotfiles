@@ -12,6 +12,11 @@ install_pacman_packages() {
 
     # Making zsh the default shell
     chsh -s /bin/zsh
+
+    # Install oh-my-zsh
+    pushd ~
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --keep-zshrc"
+    popd
 }
 
 # To download AUR packages
