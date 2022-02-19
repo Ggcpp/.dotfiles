@@ -12,6 +12,7 @@ picom
 redshift
 sof-firmware
 stow
+tmux
 xcape
 xorg-server
 xorg-xinit
