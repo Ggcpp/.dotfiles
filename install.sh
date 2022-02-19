@@ -9,6 +9,9 @@ ps -C NetworkManager >/dev/null || (systemctl start NetworkManager && systemctl 
 install_pacman_packages() {
     pacman -Syu
     pacman -S $(<pkglist/.pkglist/pacman)
+
+    # Making zsh the default shell
+    chsh -s /bin/zsh
 }
 
 # To download AUR packages
