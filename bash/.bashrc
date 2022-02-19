@@ -10,4 +10,7 @@ PS1='[\u@\h \W]\$ '
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
 
+alias fr='setxkbmap -layout ch -variant fr'
+alias us='setxkbmap us'
+
 neofetch
