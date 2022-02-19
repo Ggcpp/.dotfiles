@@ -14,9 +14,9 @@ install_pacman_packages() {
     chsh -s /bin/zsh
 
     # Install oh-my-zsh
-    pushd ~
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --keep-zshrc"
-    popd
+    #pushd ~
+    #sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --keep-zshrc"
+    #popd
 }
 
 # To download AUR packages
