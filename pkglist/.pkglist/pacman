@@ -3,6 +3,7 @@ alsa-utils
 chromium
 dmenu
 feh
+fzf
 i3-gaps
 i3status
 jq
