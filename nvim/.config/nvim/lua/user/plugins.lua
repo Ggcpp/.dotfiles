@@ -89,7 +89,7 @@ return packer.startup(function(use)
             vim.cmd [[
                 Goyo
             ]]
-            dofile(vim.fn.stdpath("config") .. "/lua/user/markdown-preview.lua").init();
+            -- dofile(vim.fn.stdpath("config") .. "/lua/user/markdown-preview.lua").init();
         end
     }
 

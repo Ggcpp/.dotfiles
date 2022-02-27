@@ -4,11 +4,13 @@ chromium
 dmenu
 feh
 fzf
+github-cli
 i3-gaps
 i3status
 jq
 neofetch
 npm
+openssh
 picom
 redshift
 sof-firmware

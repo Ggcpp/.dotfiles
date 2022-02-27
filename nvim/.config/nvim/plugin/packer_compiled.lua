@@ -106,7 +106,7 @@ _G.packer_plugins = {
   },
   ["goyo.vim"] = {
     after = { "limelight.vim" },
-    config = { "\27LJ\2\n®\1\0\0\5\0\t\0\0166\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\3\0006\2\0\0009\2\4\0029\2\5\2'\4\6\0B\2\2\2'\3\a\0&\2\3\2B\0\2\0029\0\b\0B\0\1\1K\0\1\0\tinit#/lua/user/markdown-preview.lua\vconfig\fstdpath\afn\vdofile&                Goyo\n            \bcmd\bvim\0" },
+    config = { "\27LJ\2\nE\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0&                Goyo\n            \bcmd\bvim\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
