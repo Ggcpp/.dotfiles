@@ -1,0 +1,26 @@
+configuration
+{
+    display-drun: "Applications";
+    display-window: "Windows";
+    drun-display-format: "{icon} {name}";
+    modi: "drun,window";
+    show-icons: true;
+    icon-theme: "Papirus";
+}
+
+@theme "/usr/share/rofi/themes/gruvbox-dark.rasi"
+
+window
+{
+    width: 30em;
+}
+
+element-text
+{
+    horizontal-align: 0.5;
+}
+
+element-icon
+{
+    size: 25;
+}

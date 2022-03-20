@@ -28,5 +28,7 @@ then
             alacritty -e nvim;;
         3)
             chromium;;
+        4)
+            krita;;
     esac
 fi

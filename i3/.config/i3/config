@@ -51,7 +51,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id "rofi -show drun"
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -93,8 +93,8 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+w layout tabbed
+# bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -132,6 +132,18 @@ bindsym $mod+7 exec ~/.config/i3/start.sh $ws7
 bindsym $mod+8 exec ~/.config/i3/start.sh $ws8
 bindsym $mod+9 exec ~/.config/i3/start.sh $ws9
 bindsym $mod+0 exec ~/.config/i3/start.sh $ws10
+
+# For dwarf
+bindsym $mod+y exec ~/.config/i3/start.sh $ws1
+bindsym $mod+e exec ~/.config/i3/start.sh $ws2
+bindsym $mod+i exec ~/.config/i3/start.sh $ws3
+bindsym $mod+g exec ~/.config/i3/start.sh $ws4
+bindsym $mod+o exec ~/.config/i3/start.sh $ws5
+bindsym $mod+u exec ~/.config/i3/start.sh $ws6
+# bindsym $mod+7 exec ~/.config/i3/start.sh $ws7
+# bindsym $mod+8 exec ~/.config/i3/start.sh $ws8
+# bindsym $mod+} exec ~/.config/i3/start.sh $ws9
+bindsym $mod+w exec ~/.config/i3/start.sh $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1

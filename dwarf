@@ -1,0 +1,64 @@
+default partial alphanumeric_keys
+xkb_symbols "basic" {
+
+    name[Group1]= "Dwarf";
+
+    // Alphanumeric section
+    key <TLDE> {	[     grave,	asciitilde	]	};
+    key <AE01> {	[	  1,	exclam 		]	};
+    key <AE02> {	[ bracketleft,	at		]	};
+    key <AE03> {	[ braceleft,	numbersign	]	};
+    key <AE04> {	[	  4,	dollar		]	};
+    key <AE05> {	[	  5,	percent		]	};
+    key <AE06> {	[	  6,	asciicircum	]	};
+    key <AE07> {	[	  7,	ampersand, 7	]	};
+    key <AE08> {	[	  8,	asterisk, 8	]	};
+    key <AE09> {	[braceright,	parenleft, 9	]	};
+    key <AE10> {	[bracketright, 	parenright	]	};
+    key <AE11> {	[     minus,	underscore	]	};
+    key <AE12> {	[     equal,	plus		]	};
+
+    key <AD01> {	[	  f,	F 		]	};
+    key <AD02> {	[	  l,	L		]	};
+    key <AD03> {	[	  h,	H		]	};
+    key <AD04> {	[	  d,	D		]	};
+    key <AD05> {	[	  v,	V		]	};
+    key <AD06> {	[	  z,	Z		]	};
+    key <AD07> {	[	  g,	G, 4		]	};
+    key <AD08> {	[	  o,	O, 5		]	};
+    key <AD09> {	[	  u,	U, 6		]	};
+    key <AD10> {	[	period,	greater 	]	};
+    key <AD11> {	[ bracketleft,	braceleft	]	};
+    key <AD12> {	[ bracketright,	braceright	]	};
+
+    key <AC01> {	[	  s,	S 		]	};
+    key <AC02> {	[	  r,	R		]	};
+    key <AC03> {	[	  n,	N		]	};
+    key <AC04> {	[	  t,	T		]	};
+    key <AC05> {	[	  m,	M		]	};
+    key <AC06> {	[	  p,	P		]	};
+    key <AC07> {	[	  y,	Y, 1		]	};
+    key <AC08> {	[	  e,	E, 2		]	};
+    key <AC09> {	[	  i,	I, 3		]	};
+    key <AC10> {	[ 	  a,	A		]	};
+    key <AC11> {	[     minus, underscore		]	};
+
+    key <AB01> {	[ 	  x,	X 		]	};
+    key <AB02> {	[	  b,	B		]	};
+    key <AB03> {	[ 	  j,	J		]	};
+    key <AB04> {	[ 	  k,	K		]	};
+    key <AB05> {	[	  q,	Q		]	};
+    key <AB06> {	[	  c,	C		]	};
+    key <AB07> {	[	  w,	W, 0		]	};
+    key <AB08> {	[     comma,	 less		]	};
+    key <AB09> {	[    apostrophe, quotedbl	]	};
+    key <AB10> {	[     semicolon, colon 		]	};
+
+    key <BKSL> {	[ backslash,	bar		]	};
+    key <LSGT> {	[ Return			]	};
+    key <LWIN> { type[Group1]="ONE_LEVEL", [ ISO_Level3_Shift ] };
+
+    //modifier_map Mod3 { <LWIN> };
+    
+    // End alphanumeric section
+};
