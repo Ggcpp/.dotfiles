@@ -8,3 +8,4 @@ if not status_ok then
 end
 
 -- vim.cmd("highlight Normal guibg=none ctermbg=none")
+vim.cmd("highlight ColorColumn guibg=#cc241d")

@@ -8,13 +8,13 @@ xkb_symbols "basic" {
     key <AE01> {	[	  1,	exclam 		]	};
     key <AE02> {	[ bracketleft,	at		]	};
     key <AE03> {	[ braceleft,	numbersign	]	};
-    key <AE04> {	[	  4,	dollar		]	};
-    key <AE05> {	[	  5,	percent		]	};
+    key <AE04> {	[ parenleft,	dollar		]	};
+    key <AE05> {	[ equal,	plus		]	};
     key <AE06> {	[	  6,	asciicircum	]	};
     key <AE07> {	[	  7,	ampersand, 7	]	};
-    key <AE08> {	[	  8,	asterisk, 8	]	};
-    key <AE09> {	[braceright,	parenleft, 9	]	};
-    key <AE10> {	[bracketright, 	parenright	]	};
+    key <AE08> {	[ parenright,	asterisk, 8	]	};
+    key <AE09> {	[ braceright,	parenleft, 9	]	};
+    key <AE10> {	[ bracketright,	parenright	]	};
     key <AE11> {	[     minus,	underscore	]	};
     key <AE12> {	[     equal,	plus		]	};
 
@@ -28,7 +28,7 @@ xkb_symbols "basic" {
     key <AD08> {	[	  o,	O, 5		]	};
     key <AD09> {	[	  u,	U, 6		]	};
     key <AD10> {	[	period,	greater 	]	};
-    key <AD11> {	[ bracketleft,	braceleft	]	};
+    key <AD11> {	[ slash,	question	]	};
     key <AD12> {	[ bracketright,	braceright	]	};
 
     key <AC01> {	[	  s,	S 		]	};
@@ -44,8 +44,8 @@ xkb_symbols "basic" {
     key <AC11> {	[     minus, underscore		]	};
 
     key <AB01> {	[ 	  x,	X 		]	};
-    key <AB02> {	[	  b,	B		]	};
-    key <AB03> {	[ 	  j,	J		]	};
+    key <AB02> {	[ 	  j,	J		]	};
+    key <AB03> {	[	  b,	B		]	};
     key <AB04> {	[ 	  k,	K		]	};
     key <AB05> {	[	  q,	Q		]	};
     key <AB06> {	[	  c,	C		]	};

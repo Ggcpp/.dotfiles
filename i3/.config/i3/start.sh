@@ -25,10 +25,8 @@ if [[ "$WS_EXIST" == false ]]
 then
     case $TARGET_WS in
         2)
-            alacritty -e nvim;;
-        3)
             chromium;;
-        4)
-            krita;;
+        3)
+            alacritty -e nvim;;
     esac
 fi

@@ -15,6 +15,7 @@ local options = {
     termguicolors   = true,
     cursorline      = true,
     wrap            = false,
+    colorcolumn     = "80"
 }
 
 for key, value in pairs(options) do
