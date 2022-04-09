@@ -12,5 +12,6 @@ PS1='[\u@\h \W]\$ '
 
 alias fr='setxkbmap -layout ch -variant fr'
 alias us='setxkbmap us'
+alias vim='nvim'
 
 neofetch

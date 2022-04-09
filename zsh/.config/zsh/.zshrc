@@ -13,6 +13,7 @@ compinit
 alias ls='ls --color'
 alias fr='setxkbmap -layout ch -variant fr'
 alias us='setxkbmap us'
+alias vim='nvim'
 
 setopt HIST_SAVE_NO_DUPS
 
