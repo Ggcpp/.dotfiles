@@ -8,3 +8,5 @@ end
 
 -- Vertical bar color: red (gruvbox)
 vim.cmd("highlight ColorColumn guibg=#cc241d")
+vim.cmd("highlight Normal guibg=none")
+vim.cmd("highlight SignColumn guibg=none")

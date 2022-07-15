@@ -13,9 +13,10 @@ local options = {
     signcolumn      = "yes:1",
     syntax          = "enable",
     termguicolors   = true,
-    cursorline      = true,
+    cursorline      = false,
     wrap            = false,
-    colorcolumn     = "80"
+    colorcolumn     = "80",
+    cmdheight       = 0
 }
 
 for key, value in pairs(options) do

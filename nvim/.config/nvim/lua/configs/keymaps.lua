@@ -12,8 +12,8 @@ keymap("n", "<leader>o", "<cmd>lua require('telescope.builtin').find_files(requi
 keymap("n", "<leader>F", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
 
 -- split window
-keymap("n", "<C-v>", "<C-w>v", opts)
-keymap("n", "<C-h>", "<C-w>s", opts)
+keymap("n", "<leader>v", "<C-w>v", opts)
+keymap("n", "<leader>h", "<C-w>s", opts)
 
 -- window navigation
 keymap("n", "<C-p>", "<C-w>h", opts)
