@@ -16,7 +16,7 @@ local options = {
     cursorline      = false,
     wrap            = false,
     colorcolumn     = "80",
-    cmdheight       = 0
+    cmdheight       = 1
 }
 
 for key, value in pairs(options) do
