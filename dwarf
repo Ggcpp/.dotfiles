@@ -11,11 +11,11 @@ xkb_symbols "basic" {
     key <AE04> {	[ parenleft,	dollar		]	};
     key <AE05> {	[ equal,	plus		]	};
     key <AE06> {	[	  6,	asciicircum	]	};
-    key <AE07> {	[	  7,	ampersand, 7	]	};
+    key <AE07> {	[ percent,	ampersand, 7	]	};
     key <AE08> {	[ parenright,	asterisk, 8	]	};
     key <AE09> {	[ braceright,	parenleft, 9	]	};
     key <AE10> {	[ bracketright,	parenright	]	};
-    key <AE11> {	[     minus,	underscore	]	};
+    key <AE11> {	[ exclam,	underscore	]	};
     key <AE12> {	[     equal,	plus		]	};
 
     key <AD01> {	[	  f,	F 		]	};

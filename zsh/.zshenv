@@ -9,3 +9,6 @@ export SAVEHIST=10000
 
 export EDITOR="nvim"
 export VISUAL="nvim"
+export BROWSER="chromium"
+
+export FZF_DEFAULT_OPTS='--bind=ctrl-e:up,ctrl-y:down,ctrl-i:accept'
