@@ -2,6 +2,7 @@ alacritty
 alsa-utils
 blender
 chromium
+fd
 feh
 fzf
 github-cli
@@ -16,6 +17,7 @@ npm
 openssh
 picom
 redshift
+ripgrep
 rofi
 slock
 sof-firmware

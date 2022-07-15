@@ -138,6 +138,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/gregoire/.config/local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-tpipeline"] = {
+    loaded = true,
+    path = "/home/gregoire/.config/local/share/nvim/site/pack/packer/start/vim-tpipeline",
+    url = "https://github.com/vimpostor/vim-tpipeline"
   }
 }
 

@@ -39,6 +39,9 @@ local list_plugins = {
     },
     {
         "kyazdani42/nvim-tree.lua"
+    },
+    {
+        "vimpostor/vim-tpipeline"           -- Statusline in the tmux statuslne
     }
 }
 

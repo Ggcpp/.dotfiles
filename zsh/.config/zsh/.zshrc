@@ -20,7 +20,7 @@ alias rmp="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo 
 setopt HIST_SAVE_NO_DUPS
 
 function change-dir-fzf() {
-    dir=$(fd --type d . $HOME | fzf --height 40%)
+    dir=$(fd -c "always" --type d . $HOME | fzf --ansi --height 40%)
     if [ ! -z "$dir" ]
     then
         cd $dir
@@ -30,7 +30,7 @@ function change-dir-fzf() {
 }
 
 function open-file-fzf() {
-    file=$(fd --type f . $HOME | fzf --height 40%)
+    file=$(fd -c "always" --type f . $HOME | fzf --ansi --height 40%)
     if [ ! -z "$file" ]
     then
         $EDITOR $file
