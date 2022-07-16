@@ -15,7 +15,8 @@
 <C-i>   -- Select the current selection
 
 -- Edits
-S       -- Change the whole line
+s       -- Delete char and start insert
+S       -- Delete line and start insert
 ce      -- Change the current word from cursor position
 
 -- Recording

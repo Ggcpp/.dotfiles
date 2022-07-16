@@ -214,3 +214,21 @@ client.focused #928374 #928374 #928374 #928374 #928374
 client.unfocused #7c6f64 #7c6f64 #7c6f64 #7c6f64 #504945
 
 #exec_always --no-startup-id i3-msg "workspace 8"
+
+bindsym $mod+t mode "tmux"
+
+# Fullscreen mode
+mode "tmux" {
+    bindsym $mod+y exec ~/.config/i3/start.sh $ws1
+    bindsym $mod+e exec ~/.config/i3/start.sh $ws2
+    bindsym $mod+i exec ~/.config/i3/start.sh $ws3
+    bindsym $mod+g exec ~/.config/i3/start.sh $ws4
+    bindsym $mod+o exec ~/.config/i3/start.sh $ws5
+    bindsym $mod+u exec ~/.config/i3/start.sh $ws6
+    # bindsym $mod+7 exec ~/.config/i3/start.sh $ws7
+    # bindsym $mod+8 exec ~/.config/i3/start.sh $ws8
+    # bindsym $mod+} exec ~/.config/i3/start.sh $ws9
+    bindsym $mod+w exec ~/.config/i3/start.sh $ws10
+    bindsym $mod+t mode "default"
+    bindsym $mod+f fullscreen toggle
+}
