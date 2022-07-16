@@ -1,0 +1,26 @@
+-- Movements --
+<C-u>   -- up half a page
+<C-d>   -- down half a page
+<C-o>   -- return to previous jump
+
+-- Insertions
+<C-i>   -- Tab binding
+<C-t>   -- Tab the whole line
+<C-d>   -- Untab the whole line
+<C-u>   -- Delete text just typed from cursor to the left
+
+-- Completions
+<C-y>   -- Go down in the menu
+<C-e>   -- Go up in the menu
+<C-i>   -- Select the current selection
+
+-- Edits
+S       -- Change the whole line
+ce      -- Change the current word from cursor position
+
+-- Recording
+q{num or letter}    -- Record each key strokes
+q                   -- Stop recording
+Q                   -- Execute the last record
+@{num or letter}    -- Execute record
+
