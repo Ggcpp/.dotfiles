@@ -45,7 +45,7 @@ M.getCapabilities = function()
     local cmp_nvim_lsp = require "cmp_nvim_lsp"
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    
+
     return cmp_nvim_lsp.update_capabilities(capabilities)
 end
 
