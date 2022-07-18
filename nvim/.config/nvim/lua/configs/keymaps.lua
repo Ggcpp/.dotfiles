@@ -21,6 +21,10 @@ keymap("n", "<C-y>", "<C-w>j", opts)
 keymap("n", "<C-e>", "<C-w>k", opts)
 keymap("n", "<C-i>", "<C-w>l", opts)
 
+-- buffers navigation
+keymap("n", "<leader>n", "<cmd>bnext<cr>", opts)
+keymap("n", "<leader>p", "<cmd>bprevious<cr>", opts)
+
 -- lsp diagnostics
 keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
 

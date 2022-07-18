@@ -42,6 +42,9 @@ local list_plugins = {
     },
     {
         "vimpostor/vim-tpipeline"           -- Statusline in the tmux statuslne
+    },
+    {
+        "akinsho/toggleterm.nvim"
     }
 }
 
