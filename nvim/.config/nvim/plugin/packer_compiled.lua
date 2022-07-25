@@ -144,6 +144,11 @@ _G.packer_plugins = {
     path = "/home/gregoire/.config/local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
+  ["vim-glsl"] = {
+    loaded = true,
+    path = "/home/gregoire/.config/local/share/nvim/site/pack/packer/start/vim-glsl",
+    url = "https://github.com/tikhomirov/vim-glsl"
+  },
   ["vim-tpipeline"] = {
     loaded = true,
     path = "/home/gregoire/.config/local/share/nvim/site/pack/packer/start/vim-tpipeline",

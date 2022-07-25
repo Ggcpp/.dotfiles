@@ -45,6 +45,9 @@ local list_plugins = {
     },
     {
         "akinsho/toggleterm.nvim"
+    },
+    {
+        "tikhomirov/vim-glsl"
     }
 }
 
