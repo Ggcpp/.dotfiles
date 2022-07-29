@@ -49,8 +49,8 @@ if (os.getenv("TMUX") ~= "") then
         return branch
     end
 
-    M.addElement = function(command, text)
-        return command .. "\\#[bg=gray, fg=black] " .. text .. " \\#[bg=red, fg=gray]"
+    M.addElement = function(command, text, color)
+        return command .. "\\#[bg=colour" .. color .. ", fg=black] " .. text .. " \\#[bg=colour" .. color - 3 .. ", fg=colour" .. color .. "]"
     end
 
     M.update = function()
@@ -58,15 +58,19 @@ if (os.getenv("TMUX") ~= "") then
         local mode = M.getModeName()
         local branch = M.getBranchName()
         local file = M.getFileName()
+        local color = 246
 
         if mode ~= "" then
-            command = M.addElement(command, mode)
+            command = M.addElement(command, mode, color)
+            color = color - 3
         end
         if branch ~= "" then
-            command = M.addElement(command, branch)
+            command = M.addElement(command, branch, color)
+            color = color - 3
         end
         if file ~= "" then
-            command = M.addElement(command, file)
+            command = M.addElement(command, file, color)
+            color = color - 3
         end
 
         vim.cmd(command .. "'")
