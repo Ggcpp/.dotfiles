@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/gregoire/.config/local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/gruvbox-community/gruvbox"
   },
+  ["lsp_signature.nvim"] = {
+    loaded = true,
+    path = "/home/gregoire/.config/local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
+    url = "https://github.com/ray-x/lsp_signature.nvim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/gregoire/.config/local/share/nvim/site/pack/packer/start/nvim-autopairs",
@@ -148,11 +153,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/gregoire/.config/local/share/nvim/site/pack/packer/start/vim-glsl",
     url = "https://github.com/tikhomirov/vim-glsl"
-  },
-  ["vim-tpipeline"] = {
-    loaded = true,
-    path = "/home/gregoire/.config/local/share/nvim/site/pack/packer/start/vim-tpipeline",
-    url = "https://github.com/vimpostor/vim-tpipeline"
   }
 }
 

@@ -41,13 +41,17 @@ local list_plugins = {
         "kyazdani42/nvim-tree.lua"
     },
     {
-        "vimpostor/vim-tpipeline"           -- Statusline in the tmux statuslne
+        --"vimpostor/vim-tpipeline"           -- Merge Neovim and Tmux status line
+        --"narajaon/onestatus"
     },
     {
         "akinsho/toggleterm.nvim"
     },
     {
         "tikhomirov/vim-glsl"
+    },
+    {
+        "ray-x/lsp_signature.nvim"
     }
 }
 

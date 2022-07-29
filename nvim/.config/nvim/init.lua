@@ -14,3 +14,4 @@ require "configs.autopairs"
 require "configs.tree"
 require "configs.cmp"
 require "configs.lsp" -- lsp/init.lua by default
+require "configs.statusline"

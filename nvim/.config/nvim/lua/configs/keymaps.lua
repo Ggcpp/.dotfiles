@@ -25,8 +25,18 @@ keymap("n", "<C-i>", "<C-w>l", opts)
 keymap("n", "<leader>n", "<cmd>bnext<cr>", opts)
 keymap("n", "<leader>p", "<cmd>bprevious<cr>", opts)
 
--- lsp diagnostics
+-- LSP Go To
+keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
+keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
+keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
+keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
+keymap("n", "gh", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
 keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
+
+-- LSP Actions
+keymap("n", "<leader>ar", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+keymap("n", "<leader>=", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
+
 
 -- ------------
 -- INSERT MODE
