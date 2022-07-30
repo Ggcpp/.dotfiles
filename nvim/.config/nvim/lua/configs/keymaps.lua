@@ -32,6 +32,7 @@ keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
 keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
 keymap("n", "gh", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
 keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
+keymap("n", "gs", "<cmd>ClangdSwitchSourceHeader<cr>", opts)
 
 -- LSP Actions
 keymap("n", "<leader>ar", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)

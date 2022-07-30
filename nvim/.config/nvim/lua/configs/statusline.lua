@@ -1,6 +1,8 @@
 if (os.getenv("TMUX") ~= "") then
 
     vim.opt["showmode"] = false
+    vim.opt["laststatus"] = 0
+    vim.opt["cmdheight"] = 0
 
     vim.api.nvim_create_autocmd("FocusGained", { command = [[
     :lua require("configs.statusline").update()
@@ -8,9 +10,11 @@ if (os.getenv("TMUX") ~= "") then
 
     vim.api.nvim_create_autocmd("FocusLost", { command = [[
     :silent !tmux set -g status-left ''
+    :silent !tmux set -g status-right ''
     ]] })
     vim.api.nvim_create_autocmd("ExitPre", { command = [[
     :silent !tmux set -g status-left ''
+    :silent !tmux set -g status-right ''
     ]] })
 
     vim.api.nvim_create_autocmd("ModeChanged", { command = [[
@@ -40,7 +44,7 @@ if (os.getenv("TMUX") ~= "") then
         if file ~= nil then
             return file
         else
-            return "[no name]"
+            return "<no name>"
         end
     end
 
@@ -53,8 +57,14 @@ if (os.getenv("TMUX") ~= "") then
         return command .. "\\#[bg=colour" .. color .. ", fg=black] " .. text .. " \\#[bg=colour" .. color - 3 .. ", fg=colour" .. color .. "]"
     end
 
+    M.addElementLast = function(command, text, color)
+        return command .. "\\#[bg=colour" .. color .. ", fg=black] " .. text .. " \\#[bg=default, fg=colour" .. color .. "]"
+    end
+
     M.update = function()
         local command = ":silent !tmux set -g status-left '"
+        local charCount = 0
+
         local mode = M.getModeName()
         local branch = M.getBranchName()
         local file = M.getFileName()
@@ -63,17 +73,24 @@ if (os.getenv("TMUX") ~= "") then
         if mode ~= "" then
             command = M.addElement(command, mode, color)
             color = color - 3
+            charCount = charCount + #mode + 3
         end
         if branch ~= "" then
             command = M.addElement(command, branch, color)
             color = color - 3
-        end
-        if file ~= "" then
-            command = M.addElement(command, file, color)
-            color = color - 3
+            charCount = charCount + #branch + 3
         end
 
+        command = M.addElementLast(command, file, color)
+        charCount = charCount + #file + 3
+
         vim.cmd(command .. "'")
+
+        local text = ''
+        for i = 1, charCount, 1 do
+            text = text .. ' '
+        end
+        vim.cmd(":silent !tmux set -g status-right '" .. text .. "'")
     end
 
     return M
