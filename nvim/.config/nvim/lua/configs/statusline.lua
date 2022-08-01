@@ -8,6 +8,14 @@ if (os.getenv("TMUX") ~= "") then
     :lua require("configs.statusline").update()
     ]] })
 
+    vim.api.nvim_create_autocmd("BufEnter", { command = [[
+    :lua require("configs.statusline").update()
+    ]] })
+
+    vim.api.nvim_create_autocmd("ModeChanged", { command = [[
+    :lua require("configs.statusline").update()
+    ]] })
+
     vim.api.nvim_create_autocmd("FocusLost", { command = [[
     :silent !tmux set -g status-left ''
     :silent !tmux set -g status-right ''
@@ -17,17 +25,14 @@ if (os.getenv("TMUX") ~= "") then
     :silent !tmux set -g status-right ''
     ]] })
 
-    vim.api.nvim_create_autocmd("ModeChanged", { command = [[
-    :lua require("configs.statusline").update()
-    ]] })
-
     local M = {}
 
     M.mode = {
         n = "normal",
         v = "visual",
         V = "v-line",
-        i = "insert"
+        i = "insert",
+        c = "command",
     }
 
     M.getModeName = function()
@@ -50,7 +55,11 @@ if (os.getenv("TMUX") ~= "") then
 
     M.getBranchName = function()
         local branch = vim.fn.system("git branch --show-current 2> /dev/null | tr -d '\n'")
-        return branch
+        if branch ~= "" then
+            return " " .. branch
+        else
+            return ""
+        end
     end
 
     M.addElement = function(command, text, color)
@@ -78,7 +87,7 @@ if (os.getenv("TMUX") ~= "") then
         if branch ~= "" then
             command = M.addElement(command, branch, color)
             color = color - 3
-            charCount = charCount + #branch + 3
+            charCount = charCount + #branch + 2
         end
 
         command = M.addElementLast(command, file, color)
