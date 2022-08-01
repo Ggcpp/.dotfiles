@@ -2,7 +2,7 @@ if (os.getenv("TMUX") ~= "") then
 
     vim.opt["showmode"] = false
     vim.opt["laststatus"] = 0
-    vim.opt["cmdheight"] = 0
+    --vim.opt["cmdheight"] = 0
 
     vim.api.nvim_create_autocmd("FocusGained", { command = [[
     :lua require("configs.statusline").update()
