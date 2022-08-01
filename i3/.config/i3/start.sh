@@ -27,6 +27,6 @@ then
         2)
             chromium;;
         3)
-            alacritty -e nvim;;
+            spotify-launcher;;
     esac
 fi
