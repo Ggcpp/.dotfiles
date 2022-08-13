@@ -7,6 +7,8 @@ ps -C NetworkManager >/dev/null || (systemctl start NetworkManager && systemctl 
 
 # Functions
 install_pacman_packages() {
+    # ln font
+    ln ComicMonoNerd.ttf /usr/share/fonts/TTF/
     pacman -Syu
     pacman -S $(<pkglist/.pkglist/pacman)
 
