@@ -1,0 +1,62 @@
+---
+- name: Setup ArchLinux Environment
+  hosts: localhost
+
+  tasks:
+    - name: Enable/Start NetworkManager
+      become: yes
+      ansible.builtin.systemd:
+        name: NetworkManager
+        enabled: yes
+        state: started
+
+    - name: Symlinking font
+      become: yes
+      file:
+        src: "/home/{{ ansible_user_id }}/.dotfiles/ComicMonoNerd.ttf"
+        path: "/usr/share/fonts/TTF"
+        state: link
+
+    - name: Updating All System
+      become: yes
+      pacman:
+        update_cache: yes
+        upgrade: yes
+
+    - name: Installing Packages
+      become: yes
+      pacman:
+        name: "{{ item }}"
+        state: present
+      with_lines: cat /home/{{ ansible_user_id }}/.dotfiles/packages.txt
+
+    - name: Changing Shell To Zsh
+      become: yes
+      register: result
+      shell: "chsh gregoire -s /bin/zsh"
+      changed_when: '"not" not in result.stderr'
+
+    - name: Build Directories List (Stow)
+      become: false
+      register: files
+      ansible.builtin.find:
+        paths: ["/home/{{ ansible_user_id }}/.dotfiles"]
+        recurse: no
+        file_type: directory
+
+    - name: Stow Dotfiles
+      with_items: "{{ files.files }}"
+      shell: "stow {{ item.path | basename }} --dir=/home/{{ ansible_user_id }}/.dotfiles --verbose=2"
+      register: result
+      changed_when: 'result.stderr is search("LINK: ")'
+
+#    - name: Generating SSH Key
+#      become: yes
+#      vars_prompt:
+#        name: "ssh_passphrase"
+#        prompt: "Set SSH key passphrase:"
+#
+#      user:
+#        name: "{{ ansible_user }}"
+#        generate_ssh_key: yes
+#        ssh_key_type:
