@@ -46,5 +46,3 @@ bindkey '^g' change-dir-fzf
 bindkey '^o' open-file-fzf
 
 PROMPT='%F{red}%~ %B%F{blue}>%f%b '
-
-neofetch

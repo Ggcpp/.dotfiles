@@ -58,7 +58,8 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm i3
 ;modules-center = mpd
-modules-right = filesystem xkeyboard memory cpu battery temperature date
+;modules-center = username
+modules-right = xkeyboard battery date
 
 tray-position = right
 tray-padding = 2
@@ -77,6 +78,13 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[module/username]
+type = custom/username
+format = <label>
+exec = echo "Gregoire"
+label = %output%
+
 
 [module/xwindow]
 type = internal/xwindow
@@ -330,34 +338,36 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
-battery = BAT0
+battery = BAT1
 adapter = ADP1
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
+;format-charging = <animation-charging> <label-charging>
+format-charging =  <label-charging>
 format-charging-underline = #ffb52a
 
-format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+;format-discharging = <animation-discharging> <label-discharging>
+format-discharging =  <label-discharging>
+;format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+;format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+;animation-charging-0 = 
+;animation-charging-1 = 
+;animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
+;animation-discharging-0 = 
+;animation-discharging-1 = 
+;animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 

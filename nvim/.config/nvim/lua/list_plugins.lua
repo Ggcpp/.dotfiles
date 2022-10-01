@@ -52,6 +52,11 @@ local list_plugins = {
     },
     {
         "ray-x/lsp_signature.nvim"
+    },
+    {
+        "iamcco/markdown-preview.nvim",
+        setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+        ft = { "markdown" }
     }
 }
 
