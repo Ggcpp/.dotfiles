@@ -134,16 +134,29 @@ bindsym $mod+9 exec ~/.config/i3/start.sh $ws9
 bindsym $mod+0 exec ~/.config/i3/start.sh $ws10
 
 # For dwarf
-bindsym $mod+y exec ~/.config/i3/start.sh $ws1
-bindsym $mod+e exec ~/.config/i3/start.sh $ws2
-bindsym $mod+i exec ~/.config/i3/start.sh $ws3
-bindsym $mod+g exec ~/.config/i3/start.sh $ws4
-bindsym $mod+o exec ~/.config/i3/start.sh $ws5
-bindsym $mod+u exec ~/.config/i3/start.sh $ws6
+# bindsym $mod+y exec ~/.config/i3/start.sh $ws1
+# bindsym $mod+e exec ~/.config/i3/start.sh $ws2
+# bindsym $mod+i exec ~/.config/i3/start.sh $ws3
+# bindsym $mod+g exec ~/.config/i3/start.sh $ws4
+# bindsym $mod+o exec ~/.config/i3/start.sh $ws5
+# bindsym $mod+u exec ~/.config/i3/start.sh $ws6
 # bindsym $mod+7 exec ~/.config/i3/start.sh $ws7
 # bindsym $mod+8 exec ~/.config/i3/start.sh $ws8
 # bindsym $mod+} exec ~/.config/i3/start.sh $ws9
-bindsym $mod+w exec ~/.config/i3/start.sh $ws10
+# bindsym $mod+w exec ~/.config/i3/start.sh $ws10
+
+# For QWERTY
+bindsym $mod+u exec ~/.config/i3/start.sh $ws1
+bindsym $mod+i exec ~/.config/i3/start.sh $ws2
+bindsym $mod+o exec ~/.config/i3/start.sh $ws3
+bindsym $mod+p exec ~/.config/i3/start.sh $ws4
+# bindsym $mod+[ exec ~/.config/i3/start.sh $ws5
+# bindsym $mod+] exec ~/.config/i3/start.sh $ws6
+# bindsym $mod+7 exec ~/.config/i3/start.sh $ws7
+# bindsym $mod+8 exec ~/.config/i3/start.sh $ws8
+# bindsym $mod+9 exec ~/.config/i3/start.sh $ws9
+bindsym $mod+y exec ~/.config/i3/start.sh $ws10
+
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -212,6 +225,9 @@ exec_always --no-startup-id picom &
 
 # Start polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# Start sxhkd
+exec_always --no-startup-id sxhkd &
 
 client.focused #928374 #928374 #928374 #928374 #928374
 client.unfocused #7c6f64 #7c6f64 #7c6f64 #7c6f64 #504945

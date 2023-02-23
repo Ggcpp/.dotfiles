@@ -1,0 +1,5 @@
+# wm independent hotkeys
+
+# printscreen
+@Print
+    sh ~/.config/scripts/screenshot.sh

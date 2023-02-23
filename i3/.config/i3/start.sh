@@ -26,7 +26,5 @@ then
     case $TARGET_WS in
         2)
             chromium;;
-        3)
-            spotify-launcher;;
     esac
 fi

@@ -22,12 +22,15 @@ polybar
 redshift
 ripgrep
 rofi
+scrot
 slock
 sof-firmware
 spotifyd
 stow
+sxhkd
 tmux
 xcape
+xclip
 xorg-server
 xorg-xinit
 zsh
