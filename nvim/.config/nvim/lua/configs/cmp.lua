@@ -46,7 +46,7 @@ cmp.setup({
             c = cmp.mapping.close()     -- for command mode
         }),
 
-        ["<C-y>"] = cmp.mapping(function(fallback) -- fallback execute the default behavior
+        ["<C-j>"] = cmp.mapping(function(fallback) -- fallback execute the default behavior
             if cmp.visible() then
                 cmp.select_next_item()
             elseif luasnip.expandable() then
@@ -58,7 +58,7 @@ cmp.setup({
             end
         end, { "i", "s" }), -- Insert and Select mode
 
-        ["<C-e>"] = cmp.mapping(function(fallback)
+        ["<C-k>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
             elseif luasnip.jumpable(-1) then
@@ -68,7 +68,7 @@ cmp.setup({
             end
         end, { "i", "s" }), -- Insert and Select mode
 
-        ["<Tab>"] = cmp.mapping(function(fallback)
+        ["<C-l>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.confirm( { select = true }) -- select = true: select the first item even if nothing is selected
             else

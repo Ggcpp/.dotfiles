@@ -46,7 +46,9 @@ M.getCapabilities = function()
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-    return cmp_nvim_lsp.update_capabilities(capabilities)
+    -- update_capabilities is undeprecated
+    -- return cmp_nvim_lsp.update_capabilities(capabilities)
+    return cmp_nvim_lsp.default_capabilities(capabilities)
 end
 
 return M

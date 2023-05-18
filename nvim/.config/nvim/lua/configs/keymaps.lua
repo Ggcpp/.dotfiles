@@ -10,20 +10,24 @@ vim.g.mapleader = ' '
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
 keymap("n", "<leader>o", "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ previewer = false, prompt_title = 'Open File' }))<cr>", opts)
 keymap("n", "<leader>F", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
 
 -- split window
 keymap("n", "<leader>/", "<C-w>v", opts)
 keymap("n", "<leader>-", "<C-w>s", opts)
 
 -- splits navigation
-keymap("n", "<C-p>", "<C-w>h", opts)
-keymap("n", "<C-y>", "<C-w>j", opts)
-keymap("n", "<C-e>", "<C-w>k", opts)
-keymap("n", "<C-i>", "<C-w>l", opts)
+keymap("n", "<C-h>", "<C-w>h", opts)
+keymap("n", "<C-j>", "<C-w>j", opts)
+keymap("n", "<C-k>", "<C-w>k", opts)
+keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- buffers navigation
-keymap("n", "<leader>n", "<cmd>bnext<cr>", opts)
-keymap("n", "<leader>p", "<cmd>bprevious<cr>", opts)
+-- keymap("n", "<leader>n", "<cmd>bnext<cr>", opts)
+-- keymap("n", "<leader>p", "<cmd>bprevious<cr>", opts)
+keymap("n", "<C-n>", "<cmd>bnext<cr>", opts)
+keymap("n", "<C-p>", "<cmd>bprevious<cr>", opts)
 
 -- LSP Go To
 keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
@@ -55,4 +59,9 @@ keymap("i", "{", 		"{<C-g>u", opts)
 keymap("i", "<tab>", 	"<tab><C-g>u", opts)
 keymap("i", "<space>", 	"<C-g>u ", opts)
 keymap("i", "<enter>", 	"<C-g>u<enter>", opts)
+
+keymap("i", ";", 	"<end>;", opts)
+keymap("i", "<C-;>", 	";", opts)
+-- keymap("i", "'", 	"_", opts)
+-- keymap("i", "_", 	"'", opts)
 -- keymap("i", "<C-g>", 	"<C-g>u<enter>", opts)

@@ -3,9 +3,9 @@ local lspconfig = require("lspconfig")
 
 local servers = {
     "clangd",
-    "sumneko_lua",
     "intelephense",
-    "cmake"
+    "cmake",
+    "rust_analyzer"
 }
 
 lsp_installer.setup({

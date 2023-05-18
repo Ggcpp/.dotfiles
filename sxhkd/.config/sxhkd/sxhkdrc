@@ -3,3 +3,16 @@
 # printscreen
 @Print
     sh ~/.config/scripts/screenshot.sh
+
+# brightness keys
+XF86MonBrightnessDown
+    oldnum=`cut -d ',' -f2 /sys/class/backlight/amdgpu_bl0/brightness`
+    newnum=`expr $oldnum - 1`
+    sed -i "s/$oldnum\$/$newnum/g" /sys/class/backlight/amdgpu_bl0/brightness
+
+XF86MonBrightnessUp
+    echo 50 > /sys/class/backlight/amdgpu_bl0/brightness
+
+# Alt-Shift
+alt + shift + u
+    setxkbmap us
