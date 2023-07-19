@@ -12,3 +12,4 @@ feh --no-fehbg --bg-scale "/home/gregoire/.config/wallpapers/rainy2.jpg"
 redshift -O 2500
 #picom & (it is launched in the i3 config file, don't know where it should be...)
 exec i3
+#exec instantwm
