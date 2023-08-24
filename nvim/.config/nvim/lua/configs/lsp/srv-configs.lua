@@ -5,7 +5,8 @@ local servers = {
     "clangd",
     "intelephense",
     "cmake",
-    "rust_analyzer"
+    "rust_analyzer",
+    "html"
 }
 
 lsp_installer.setup({
