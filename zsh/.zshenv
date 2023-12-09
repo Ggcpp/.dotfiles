@@ -12,3 +12,8 @@ export VISUAL="nvim"
 export BROWSER="chromium"
 
 export FZF_DEFAULT_OPTS='--bind=ctrl-e:up,ctrl-y:down,ctrl-i:accept'
+
+# Fixing paths
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm"
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
+export CONDA_ROOT="$XDG_CONFIG_HOME/conda"

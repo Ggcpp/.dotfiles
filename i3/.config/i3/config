@@ -103,7 +103,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -122,60 +122,60 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+1 exec ~/.config/i3/start.sh $ws1
-bindsym $mod+2 exec ~/.config/i3/start.sh $ws2
-bindsym $mod+3 exec ~/.config/i3/start.sh $ws3
-bindsym $mod+4 exec ~/.config/i3/start.sh $ws4
-bindsym $mod+5 exec ~/.config/i3/start.sh $ws5
-bindsym $mod+6 exec ~/.config/i3/start.sh $ws6
-bindsym $mod+7 exec ~/.config/i3/start.sh $ws7
-bindsym $mod+8 exec ~/.config/i3/start.sh $ws8
-bindsym $mod+9 exec ~/.config/i3/start.sh $ws9
-bindsym $mod+0 exec ~/.config/i3/start.sh $ws10
-
-# For dwarf
-# bindsym $mod+y exec ~/.config/i3/start.sh $ws1
-# bindsym $mod+e exec ~/.config/i3/start.sh $ws2
-# bindsym $mod+i exec ~/.config/i3/start.sh $ws3
-# bindsym $mod+g exec ~/.config/i3/start.sh $ws4
-# bindsym $mod+o exec ~/.config/i3/start.sh $ws5
-# bindsym $mod+u exec ~/.config/i3/start.sh $ws6
+# bindsym $mod+1 exec ~/.config/i3/start.sh $ws1
+# bindsym $mod+2 exec ~/.config/i3/start.sh $ws2
+# bindsym $mod+3 exec ~/.config/i3/start.sh $ws3
+# bindsym $mod+4 exec ~/.config/i3/start.sh $ws4
+# bindsym $mod+5 exec ~/.config/i3/start.sh $ws5
+# bindsym $mod+6 exec ~/.config/i3/start.sh $ws6
 # bindsym $mod+7 exec ~/.config/i3/start.sh $ws7
 # bindsym $mod+8 exec ~/.config/i3/start.sh $ws8
-# bindsym $mod+} exec ~/.config/i3/start.sh $ws9
-# bindsym $mod+w exec ~/.config/i3/start.sh $ws10
+# bindsym $mod+9 exec ~/.config/i3/start.sh $ws9
+# bindsym $mod+0 exec ~/.config/i3/start.sh $ws10
+
+# For dwarf
+bindsym $mod+y exec ~/.config/i3/start.sh $ws1
+bindsym $mod+e exec ~/.config/i3/start.sh $ws2
+bindsym $mod+i exec ~/.config/i3/start.sh $ws3
+bindsym $mod+a exec ~/.config/i3/start.sh $ws4
+# bindsym $mod+- exec ~/.config/i3/start.sh $ws5
+bindsym $mod+g exec ~/.config/i3/start.sh $ws6
+bindsym $mod+o exec ~/.config/i3/start.sh $ws7
+bindsym $mod+u exec ~/.config/i3/start.sh $ws8
+# bindsym $mod+. exec ~/.config/i3/start.sh $ws9
+# bindsym $mod+/ exec ~/.config/i3/start.sh $ws10
 
 # For QWERTY
-bindsym $mod+u exec ~/.config/i3/start.sh $ws1
-bindsym $mod+i exec ~/.config/i3/start.sh $ws2
-bindsym $mod+o exec ~/.config/i3/start.sh $ws3
-bindsym $mod+p exec ~/.config/i3/start.sh $ws4
+# bindsym $mod+u exec ~/.config/i3/start.sh $ws1
+# bindsym $mod+i exec ~/.config/i3/start.sh $ws2
+# bindsym $mod+o exec ~/.config/i3/start.sh $ws3
+# bindsym $mod+p exec ~/.config/i3/start.sh $ws4
 # bindsym $mod+[ exec ~/.config/i3/start.sh $ws5
 # bindsym $mod+] exec ~/.config/i3/start.sh $ws6
 # bindsym $mod+7 exec ~/.config/i3/start.sh $ws7
 # bindsym $mod+8 exec ~/.config/i3/start.sh $ws8
 # bindsym $mod+9 exec ~/.config/i3/start.sh $ws9
-bindsym $mod+y exec ~/.config/i3/start.sh $ws10
+# bindsym $mod+y exec ~/.config/i3/start.sh $ws10
 
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+y move container to workspace number $ws1
+bindsym $mod+Shift+e move container to workspace number $ws2
+bindsym $mod+Shift+i move container to workspace number $ws3
+bindsym $mod+Shift+a move container to workspace number $ws4
+# bindsym $mod+Shift+- move container to workspace number $ws5
+bindsym $mod+Shift+g move container to workspace number $ws6
+bindsym $mod+Shift+o move container to workspace number $ws7
+bindsym $mod+Shift+u move container to workspace number $ws8
+# bindsym $mod+Shift+. move container to workspace number $ws9
+# bindsym $mod+Shift+/ move container to workspace number $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

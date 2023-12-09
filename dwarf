@@ -3,6 +3,8 @@ xkb_symbols "basic" {
 
     name[Group1]= "Dwarf";
 
+    //modifier_map Mod 5 { <LWIN> };
+
     // Alphanumeric section
     key <TLDE> {	[     grave,	asciitilde	]	};
     key <AE01> {	[	  1,	exclam 		]	};
@@ -11,9 +13,9 @@ xkb_symbols "basic" {
     key <AE04> {	[ parenleft,	dollar		]	};
     key <AE05> {	[ equal,	plus		]	};
     key <AE06> {	[	  6,	asciicircum	]	};
-    key <AE07> {	[ percent,	ampersand, 7	]	};
-    key <AE08> {	[ parenright,	asterisk, 8	]	};
-    key <AE09> {	[ braceright,	parenleft, 9	]	};
+    key <AE07> {	[ percent,	ampersand 	]	};
+    key <AE08> {	[ parenright,	asterisk	]	};
+    key <AE09> {	[ braceright,	parenleft	]	};
     key <AE10> {	[ bracketright,	parenright	]	};
     key <AE11> {	[ exclam,	underscore	]	};
     key <AE12> {	[     equal,	plus		]	};
@@ -24,11 +26,11 @@ xkb_symbols "basic" {
     key <AD04> {	[	  d,	D		]	};
     key <AD05> {	[	  v,	V		]	};
     key <AD06> {	[	  z,	Z		]	};
-    key <AD07> {	[	  g,	G, 4		]	};
-    key <AD08> {	[	  o,	O, 5		]	};
-    key <AD09> {	[	  u,	U, 6		]	};
-    key <AD10> {	[	period,	greater 	]	};
-    key <AD11> {	[ slash,	question	]	};
+    key <AD07> {	[	  g,	G, 6		]	};
+    key <AD08> {	[	  o,	O, 7		]	};
+    key <AD09> {	[	  u,	U, 8		]	};
+    key <AD10> {	[	period,	greater, 9 	]	};
+    key <AD11> {	[ slash,	question, 0	]	};
     key <AD12> {	[ bracketright,	braceright	]	};
 
     key <AC01> {	[	  s,	S 		]	};
@@ -40,8 +42,8 @@ xkb_symbols "basic" {
     key <AC07> {	[	  y,	Y, 1		]	};
     key <AC08> {	[	  e,	E, 2		]	};
     key <AC09> {	[	  i,	I, 3		]	};
-    key <AC10> {	[ 	  a,	A		]	};
-    key <AC11> {	[     minus, underscore		]	};
+    key <AC10> {	[ 	  a,	A, 4		]	};
+    key <AC11> {	[     minus, underscore, 5		]	};
 
     key <AB01> {	[ 	  x,	X 		]	};
     key <AB02> {	[ 	  j,	J		]	};
@@ -49,7 +51,7 @@ xkb_symbols "basic" {
     key <AB04> {	[ 	  k,	K		]	};
     key <AB05> {	[	  q,	Q		]	};
     key <AB06> {	[	  c,	C		]	};
-    key <AB07> {	[	  w,	W, 0		]	};
+    key <AB07> {	[	  w,	W		]	};
     key <AB08> {	[     comma,	 less		]	};
     key <AB09> {	[    apostrophe, quotedbl	]	};
     key <AB10> {	[     semicolon, colon 		]	};

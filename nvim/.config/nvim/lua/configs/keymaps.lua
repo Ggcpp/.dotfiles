@@ -43,6 +43,17 @@ keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
 keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 keymap("n", "<leader>=", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
 
+-- "Optimized" words movements
+-- keymap("n", "w", "e<cmd>call search('[a-zA-Z]', 'Wz')<cr>", opts)
+-- keymap("n", "w", "<cmd>call search('[^a-zA-Z][a-zA-Z]', 'Wze')<cr>", opts)
+keymap("n", "w", "<cmd>call search('[^a-zA-Z][a-zA-Z]\\|^[a-zA-Z]', 'Wze')<cr>", opts)
+keymap("n", "b", "b<cmd>call search('\\<[a-zA-Z]', 'Wbc')<cr>", opts)
+keymap("n", "e", "e<cmd>call search('[a-zA-Z]\\>', 'Wzce')<cr>", opts)
+
+-- move cursor to the middle line before 's' search
+-- to ignore cursor position when pressing 's' or 'S'
+-- hint: pressing 'M' move cursor to middle line.
+-- keymap()
 
 -- ------------
 -- INSERT MODE

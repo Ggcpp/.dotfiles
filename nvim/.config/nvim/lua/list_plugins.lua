@@ -57,6 +57,12 @@ local list_plugins = {
         "iamcco/markdown-preview.nvim",
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
         ft = { "markdown" }
+    },
+    {
+        "ThePrimeagen/vim-be-good"
+    },
+    {
+        "ggandor/lightspeed.nvim"
     }
 }
 
