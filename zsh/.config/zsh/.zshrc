@@ -46,3 +46,6 @@ bindkey '^g' change-dir-fzf
 bindkey '^o' open-file-fzf
 
 PROMPT='%F{red}%~ %B%F{blue}>%f%b '
+
+# use z
+eval "$(zoxide init --cmd cd zsh)"

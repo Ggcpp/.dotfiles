@@ -63,7 +63,7 @@ local list_plugins = {
     },
     {
         "ggandor/lightspeed.nvim"
-    }
+    },
 }
 
 return list_plugins

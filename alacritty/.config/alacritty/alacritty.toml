@@ -1,0 +1,31 @@
+[colors.primary]
+background = "#282828"
+foreground = "#ebdbb2"
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "ComicMono Nerd Font"
+style = "Normal"
+
+[[keyboard.bindings]]
+chars = "\u001B[59;5u"
+key = "Semicolon"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[39;5u"
+key = "Apostrophe"
+mods = "Control"
+
+[mouse]
+hide_when_typing = true
+
+[window]
+dynamic_padding = false
+opacity = 0.8
+
+[window.padding]
+x = 0
+y = 0

@@ -20,6 +20,8 @@ npm
 openssh
 picom
 polybar
+pulseaudio
+pulseaudio-alsa
 redshift
 ripgrep
 rofi
@@ -34,4 +36,5 @@ xcape
 xclip
 xorg-server
 xorg-xinit
+zoxide
 zsh
