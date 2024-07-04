@@ -1,4 +1,7 @@
-local lsp_installer = require("nvim-lsp-installer")
+require("mason").setup()
+require("mason-lspconfig").setup()
+
+local lsp_installer = require("mason-lspconfig")
 local lspconfig = require("lspconfig")
 
 local servers = {
@@ -6,7 +9,9 @@ local servers = {
     "intelephense",
     "cmake",
     "rust_analyzer",
-    "html"
+    "html",
+    "jsonls",
+    "lua_ls",
 }
 
 lsp_installer.setup({

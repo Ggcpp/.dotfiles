@@ -19,11 +19,17 @@ local list_plugins = {
         "L3MON4D3/LuaSnip"                  -- Snippets engine
     },
     {
-        "neovim/nvim-lspconfig"             -- Configs for the Neovim LSP client
+        "williamboman/mason.nvim",
     },
     {
-        "williamboman/nvim-lsp-installer"   -- LSP servers installer
+        "williamboman/mason-lspconfig.nvim",
     },
+    {
+        "neovim/nvim-lspconfig"             -- Configs for the Neovim LSP client
+    },
+--    {
+--        "williamboman/nvim-lsp-installer"   -- LSP servers installer
+--    },
     {
         "nvim-telescope/telescope.nvim",
         requires = {
@@ -63,6 +69,19 @@ local list_plugins = {
     },
     {
         "ggandor/lightspeed.nvim"
+    },
+    {
+        "mfussenegger/nvim-dap"
+    },
+    {
+        "rcarriga/nvim-dap-ui",
+        requires = {
+            { "mfussenegger/nvim-dap" },
+            { "nvim-neotest/nvim-nio" }
+        }
+    },
+    {
+        "simrat39/rust-tools.nvim"
     },
 }
 

@@ -43,6 +43,10 @@ keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
 keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 keymap("n", "<leader>=", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
 
+-- Dap
+keymap("n", "<leader>bp", ":DapToggleBreakpoint<cr>", opts)
+keymap("n", "<leader>rd", ":RustDebuggables<cr>", opts)
+
 -- "Optimized" words movements
 -- keymap("n", "w", "e<cmd>call search('[a-zA-Z]', 'Wz')<cr>", opts)
 -- keymap("n", "w", "<cmd>call search('[^a-zA-Z][a-zA-Z]', 'Wze')<cr>", opts)

@@ -9,16 +9,6 @@ size = 12.0
 family = "ComicMono Nerd Font"
 style = "Normal"
 
-[[keyboard.bindings]]
-chars = "\u001B[59;5u"
-key = "Semicolon"
-mods = "Control"
-
-[[keyboard.bindings]]
-chars = "\u001B[39;5u"
-key = "Apostrophe"
-mods = "Control"
-
 [mouse]
 hide_when_typing = true
 
