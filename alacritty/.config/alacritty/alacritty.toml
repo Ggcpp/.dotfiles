@@ -3,11 +3,20 @@ background = "#282828"
 foreground = "#ebdbb2"
 
 [font]
-size = 12.0
+size = 11
 
 [font.normal]
-family = "ComicMono Nerd Font"
-style = "Normal"
+# family = "ComicMono Nerd Font"
+family = "Comic Code Ligatures"
+style = "Medium"
+
+[font.bold]
+family = "Comic Code Ligatures"
+style = "Bold"
+
+[font.italic]
+family = "Comic Code Ligatures"
+style = "Italic"
 
 [mouse]
 hide_when_typing = true
