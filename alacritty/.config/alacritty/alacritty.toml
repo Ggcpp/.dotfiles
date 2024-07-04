@@ -3,12 +3,12 @@ background = "#282828"
 foreground = "#ebdbb2"
 
 [font]
-size = 11.5
+size = 11
 
 [font.normal]
 # family = "ComicMono Nerd Font"
 family = "Comic Code Ligatures"
-style = "Medium"
+style = "Regular"
 
 [font.bold]
 family = "Comic Code Ligatures"
