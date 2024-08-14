@@ -1,6 +1,6 @@
 local options = {
     number          = true,
-    relativenumber  = true,
+    -- relativenumber  = true,
     tabstop         = 4,
     shiftwidth      = 4,
     softtabstop     = 4,
@@ -16,7 +16,7 @@ local options = {
     termguicolors   = true,
     cursorline      = false,
     wrap            = false,
-    colorcolumn     = "80",
+    --colorcolumn     = "80",
     cmdheight       = 1
 }
 

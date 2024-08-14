@@ -17,3 +17,9 @@ export FZF_DEFAULT_OPTS='--bind=ctrl-e:up,ctrl-y:down,ctrl-i:accept'
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm"
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
 export CONDA_ROOT="$XDG_CONFIG_HOME/conda"
+
+# Flutter bin dir
+export PATH="/usr/bin/flutter/bin:$PATH"
+
+# `cargo install`, bin dir
+export PATH="$HOME/.cargo/bin:$PATH"

@@ -10,6 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod1
+set $pen Mod3
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -251,3 +252,6 @@ mode "tmux" {
     bindsym $mod+t mode "default"
     bindsym $mod+f fullscreen toggle
 }
+
+# Drawing setup
+bindsym $pen+t exec ~/.config/i3/move_pen_area.sh

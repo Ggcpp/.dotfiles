@@ -6,16 +6,16 @@ foreground = "#ebdbb2"
 size = 11
 
 [font.normal]
-# family = "ComicMono Nerd Font"
-family = "Comic Code Ligatures"
-style = "Regular"
+#family = "ComicMono Nerd Font"
+family = "ComicCode"
+style = "Medium"
 
 [font.bold]
-family = "Comic Code Ligatures"
+family = "ComicCode"
 style = "Bold"
 
 [font.italic]
-family = "Comic Code Ligatures"
+family = "ComicCode"
 style = "Italic"
 
 [mouse]
