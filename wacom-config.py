@@ -1,12 +1,16 @@
 from dataclasses import dataclass
 from time import sleep
 import subprocess
+import sys
+import os
 
 # To configure
 PPI = 93
 DISPLAY_WIDTH_PX = 2560
 DISPLAY_HEIGHT_PX = 1440
+OVERLAY_PATH = str(os.environ.get("HOME")) + "/.dotfiles/overlay"
 
+# Const
 CM_PER_INCH = 2.54
 
 @dataclass
@@ -25,56 +29,93 @@ class Size:
     w: Width
     h: Height
 
-def call(args):
-    return subprocess.run([str(i) for i in args], capture_output=True, check=True, text=True).stdout
+@dataclass
+class Pos:
+    x: float
+    y: float
 
-def wacom_device_id() -> int:
+@dataclass
+class Device:
+    id: int
+    size: Size
+
+def call(args, input=None):
+    return subprocess.run([str(i) for i in args], input=input, capture_output=True, check=True, text=True).stdout
+
+def async_call(args):
+    subprocess.Popen([str(i) for i in args], text=True)
+
+def config_device(device: Device):
+    call(["xsetwacom", "set", device.id, "Button", 2, "key rctrl"])
+
+def get_device() -> Device:
+    # Device id
+    id = None;
     devices = call(["xsetwacom", "list", "devices"]).split('\n')
     for device in devices:
         if device.__contains__("type: STYLUS"):
             id_nums = [int(i) for i in device if i.isdigit()]
-            return int(''.join(map(str, id_nums)))
+            id = int(''.join(map(str, id_nums)))
 
-    raise Exception("No stylus detected")
+    if id == None:
+        raise Exception("No stylus detected")
 
-def get_display_size() -> Size:
-    w = Width(DISPLAY_WIDTH_PX/PPI*CM_PER_INCH, DISPLAY_WIDTH_PX)
-    h = Height(DISPLAY_HEIGHT_PX/PPI*CM_PER_INCH, DISPLAY_HEIGHT_PX)
-    return Size(w, h)
-
-def get_tablet_size(device_id: int) -> Size:
-    area = call(["xsetwacom", "get", str(device_id), "Area"]).split(' ')
+    # Device Size
+    area = call(["xsetwacom", "get", str(id), "Area"]).split(' ')
     w_cm = int(area[2]) / 1000
     h_cm = int(area[3]) / 1000
 
     w = Width(w_cm, PPI/CM_PER_INCH*w_cm)
     h = Height(h_cm, PPI/CM_PER_INCH*h_cm)
-    return Size(w, h)
+    size = Size(w, h)
 
-def map_to_output(device_id: int, tablet_size: Size, display_size: Size):
-    args = ["xsetwacom", "set", device_id, "MapToOutput", "{}x{}+{}+{}"
-          .format(round(tablet_size.w.px), round(tablet_size.h.px),
-                  round(display_size.w.px / 2 - tablet_size.w.px / 2),
-                  round(display_size.h.px / 2 - tablet_size.h.px / 2))]
-    print(args)
-    call(args)
+    return Device(id, size)
 
-def set_tablet_area(device_id: int, tablet_size: Size):
-    args = ["xsetwacom", "set", device_id, "Area", 0, 0, int(tablet_size.w.cm*1000), int(tablet_size.h.cm*1000)]
-    print(args)
-    call(args)
+def map_to_output(device: Device, direction: str):
+    coord = call(["curl", "-X", "POST", "-d", direction, "localhost:8080/move"]).split(' ')
+    x = int(coord[0].split(":")[1])
+    y = int(coord[1].split(":")[1])
+
+    args = ["xsetwacom", "set", device.id, "MapToOutput", "{}x{}+{}+{}"
+          .format(round(device.size.w.px),
+                  round(device.size.h.px),
+                  x,y)]
+    async_call(args)
+
+def start_overlay():
+    device = get_device()
+    async_call([OVERLAY_PATH, round(device.size.w.px), round(device.size.h.px)])
+
+    config_device(device)
+    map_to_output(device, "center")
+
+def stop_overlay():
+    async_call(["curl", "localhost:8080/stop"])
+
+def move_overlay(direction: str):
+    device = get_device()
+
+    map_to_output(device, direction)
+
 
 # To ensure the tablet is connected
-sleep(1)
+# sleep(1)
 
-device_id = wacom_device_id()
-display_size = get_display_size()
-tablet_size = get_tablet_size(device_id)
-print(device_id)
-print(display_size)
-print(tablet_size)
+def main():
+    args = iter(sys.argv[1:])
+    try:
+        match next(args):
+            case "start":
+                start_overlay()
+            case "stop":
+                stop_overlay()
+            case "move":
+                direction = next(args)
+                move_overlay(direction)
+            case _:
+                print("Unknown argument")
+    except StopIteration:
+        print("Not enough arguments")
 
-map_to_output(device_id, tablet_size, display_size)
-set_tablet_area(device_id, tablet_size)
-
-call(["/home/gregoire/.dotfiles/overlay", round(tablet_size.w.px), round(tablet_size.h.px)])
+if __name__ == "__main__":
+    main()

@@ -254,4 +254,13 @@ mode "tmux" {
 }
 
 # Drawing setup
-bindsym $pen+t exec ~/.config/i3/move_pen_area.sh
+bindsym $mod+w mode "wacom"; exec python ~/.dotfiles/wacom-config.py start
+
+# Wacom mode
+mode "wacom" {
+    bindsym $mod+w mode "default"; exec python ~/.dotfiles/wacom-config.py stop
+    bindsym $pen+Up exec python ~/.dotfiles/wacom-config.py move up
+    bindsym $pen+Down exec python ~/.dotfiles/wacom-config.py move down
+    bindsym $pen+Left exec python ~/.dotfiles/wacom-config.py move left
+    bindsym $pen+Right exec python ~/.dotfiles/wacom-config.py move right
+}
