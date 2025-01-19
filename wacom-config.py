@@ -5,9 +5,12 @@ import sys
 import os
 
 # To configure
+# For some reason the wacom intuos pro L has a size x2 when doing "xsetwacom get <id> Area".. weird
+NATIVE_SCALE_SIZE = 2
 PPI = 93
 DISPLAY_WIDTH_PX = 2560
 DISPLAY_HEIGHT_PX = 1440
+SCALE_FACTOR = 1.5
 OVERLAY_PATH = str(os.environ.get("HOME")) + "/.dotfiles/overlay"
 
 # Const
@@ -62,8 +65,8 @@ def get_device() -> Device:
 
     # Device Size
     area = call(["xsetwacom", "get", str(id), "Area"]).split(' ')
-    w_cm = int(area[2]) / 1000
-    h_cm = int(area[3]) / 1000
+    w_cm = int(area[2]) / NATIVE_SCALE_SIZE / 1000 * SCALE_FACTOR
+    h_cm = int(area[3]) / NATIVE_SCALE_SIZE / 1000 * SCALE_FACTOR
 
     w = Width(w_cm, PPI/CM_PER_INCH*w_cm)
     h = Height(h_cm, PPI/CM_PER_INCH*h_cm)
@@ -84,6 +87,7 @@ def map_to_output(device: Device, direction: str):
 
 def start_overlay():
     device = get_device()
+    print(device)
     async_call([OVERLAY_PATH, round(device.size.w.px), round(device.size.h.px)])
 
     config_device(device)
