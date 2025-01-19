@@ -6,7 +6,6 @@ local lspconfig = require("lspconfig")
 
 local servers = {
     "clangd",
-    "cmake",
     "rust_analyzer",
     "html",
     "jsonls",
