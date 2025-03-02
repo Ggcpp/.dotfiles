@@ -10,6 +10,9 @@ vim.g.mapleader = ' '
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
 keymap("n", "<leader>o", "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ previewer = false, prompt_title = 'Open File' }))<cr>", opts)
 keymap("n", "<leader>F", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
+keymap("n", "<leader>S", "<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<cr>", opts)
+keymap("n", "<leader>s", "<cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>", opts)
+keymap("n", "<leader>f", "<cmd>lua require('telescope.builtin').lsp_document_symbols({ symbols = {'function', 'method' } })<cr>", opts)
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 

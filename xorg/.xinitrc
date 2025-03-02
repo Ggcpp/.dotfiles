@@ -15,7 +15,7 @@ xmodmap -e 'remove Control = Control_R'
 xmodmap -e 'add Mod3 = Control_R'
 
 # feh --no-fehbg --bg-scale "/home/gregoire/.config/wallpapers/wpp$[$RANDOM % 5 + 1].jpg"
-feh --no-fehbg --bg-scale "/home/gregoire/.config/wallpapers/test.png"
+feh --no-fehbg --bg-scale "/home/daremo/.config/wallpapers/w1.png"
 redshift -O 2500
 #picom & (it is launched in the i3 config file, don't know where it should be...)
 exec i3
