@@ -8,12 +8,17 @@ ps -C NetworkManager >/dev/null || (systemctl start NetworkManager && systemctl 
 # Functions
 install_pacman_packages() {
     # ln font
-    ln ComicMonoNerd.ttf /usr/share/fonts/TTF/
+    # ln ComicMonoNerd.ttf /usr/share/fonts/TTF/
+    ln font/* /usr/share/fonts/
+
     pacman -Syu
     pacman -S $(<pkglist/.pkglist/pacman)
 
     # Making zsh the default shell
     chsh -s /bin/zsh
+
+    # ln dwarf
+    ln dwarf /usr/share/X11/xkb/symbols
 
     # Install oh-my-zsh
     #pushd ~

@@ -19,6 +19,7 @@ picom
 polybar
 pulseaudio
 pulseaudio-alsa
+python
 redshift
 ripgrep
 rofi
@@ -28,6 +29,7 @@ sof-firmware
 stow
 sxhkd
 tmux
+unzip
 xcape
 xclip
 xdotool
