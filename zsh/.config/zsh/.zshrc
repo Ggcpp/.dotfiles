@@ -14,6 +14,7 @@ alias ls='ls --color'
 alias fr='setxkbmap -layout ch -variant fr'
 alias us='setxkbmap us'
 alias vim='nvim'
+alias v='nvim'
 alias addp="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
 alias rmp="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
 
