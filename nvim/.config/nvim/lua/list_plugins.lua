@@ -6,6 +6,11 @@ local list_plugins = {
         "gruvbox-community/gruvbox" -- Gruvbox coloscheme
     },
     {
+        "ful1e5/onedark.nvim" -- coloscheme deprecated
+        -- "monsonjeremy/onedark.nvim",
+        -- branch = "treesitter"
+    },
+    {
         "hrsh7th/nvim-cmp",
         commit = "df01f9570cc32e88f1c8b24a5546fec3b6a06835" -- Completion
     },
