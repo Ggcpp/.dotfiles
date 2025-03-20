@@ -18,7 +18,6 @@ xmodmap -e 'add Mod3 = Control_R'
 feh --no-fehbg --bg-scale "/home/daremo/.config/wallpapers/w1.png"
 redshift -O 2500
 #picom & (it is launched in the i3 config file, don't know where it should be...)
-tmux new-session -d
 
 exec i3
 #exec instantwm
