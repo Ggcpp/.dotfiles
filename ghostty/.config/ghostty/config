@@ -47,8 +47,8 @@
 # keybind = clear
 window-decoration = none
 mouse-hide-while-typing
-# background-opacity = 0.8
-background-opacity = 1
+background-opacity = 0.8
+# background-opacity = 1
 command = tmux new -As scratch
 confirm-close-surface = false
 app-notifications = false
@@ -56,9 +56,12 @@ resize-overlay = never
 # font-family = Maple Mono NF CN
 # font-family = JetBrains Mono
 font-family = Comic Code
-font-size = 12
+font-size = 11
 theme = GruvboxDark
 cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
 #custom-shader = shaders/bettercrt.glsl
+
+# Convert Ctrl+backspace to Ctrl+w
+keybind = ctrl+backspace=text:\x17

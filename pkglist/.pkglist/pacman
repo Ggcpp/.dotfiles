@@ -6,8 +6,10 @@ chromium
 fd
 feh
 fzf
-github-cli
+ghostty
 hyprland
+hyprpaper
+hyprsunset
 i3-gaps
 i3status
 jq
@@ -32,6 +34,7 @@ stow
 sxhkd
 tmux
 unzip
+waybar
 xcape
 xclip
 xdotool

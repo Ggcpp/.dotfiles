@@ -77,6 +77,7 @@ keymap("i", "{", 		"{<C-g>u", opts)
 keymap("i", "<tab>", 	"<tab><C-g>u", opts)
 keymap("i", "<space>", 	"<C-g>u ", opts)
 keymap("i", "<enter>", 	"<C-g>u<enter>", opts)
+keymap("i", "<C-backspace>", 	"<C-w>", opts)
 
 keymap("i", ";", 	"<end>;", opts)
 keymap("i", "<C-;>", 	";", opts)

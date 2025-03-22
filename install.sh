@@ -16,7 +16,7 @@ install_pacman_packages() {
 
     # Enable and start keyd deamon
     sudo systemctl enable --now keyd
-    ln keyd.conf /etc/keyd/default.conf
+    sudo ln keyd.conf /etc/keyd/default.conf
 
     # Making zsh the default shell
     chsh -s /bin/zsh
